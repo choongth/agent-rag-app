@@ -157,12 +157,10 @@ class SmartDocAgent:
             result = self._execute_tool(tc.function.name, json.loads(tc.function.arguments))
             messages.append({"role": "tool", "tool_call_id": tc.id, "content": result})
 
-        # Phase 2 — streaming synthesis (tool_choice="none" prevents further tool calls)
+        # Phase 2 — streaming synthesis
         stream = self.client.chat.completions.create(
             model=self.model,
             messages=messages,
-            tools=TOOLS,
-            tool_choice="none",
             stream=True,
         )
 
