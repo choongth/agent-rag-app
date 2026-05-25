@@ -1,0 +1,19 @@
+# Environment — never commit API keys
+.env
+
+# Virtual environment
+venv/
+
+# ChromaDB local data
+backend/chroma_db/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# OS
+.DS_Store
+Thumbs.db
