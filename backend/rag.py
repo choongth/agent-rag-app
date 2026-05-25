@@ -167,7 +167,7 @@ class RAGPipeline:
           2. BM25 keyword     ──┘
           3. Cross-encoder rerank → top n_results
         """
-        pool = max(n_results * 4, 20)
+        pool = max(n_results * 2, 10)  # smaller pool = faster reranking on CPU
 
         candidates = self._rrf_fusion(
             self._semantic_search(query, pool),

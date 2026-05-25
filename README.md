@@ -65,11 +65,11 @@ PDF / TXT / MD
 QUERYING (every question)
 ──────────────────────────
 User question
-  ├─ SentenceTransformer encode → semantic search  (top-20)  ──┐
-  └─ BM25 tokenize              → keyword search   (top-20)  ──┤
+  ├─ SentenceTransformer encode → semantic search  (top-10)  ──┐
+  └─ BM25 tokenize              → keyword search   (top-10)  ──┤
                                                                │
                                RRF fusion (Reciprocal Rank)  ◄─┘
-                                     top-20 candidates
+                                     top-10 candidates
                                            │
                                CrossEncoder rerank
                                (reads query + chunk together)
